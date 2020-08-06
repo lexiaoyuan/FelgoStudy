@@ -1,0 +1,91 @@
+import Felgo 3.0
+import QtQuick 2.0
+import QtQuick.Layouts 1.3
+
+App {
+
+    NavigationStack {
+
+        Page {
+            id: loginPage
+            title: qsTr("登录")
+
+            backgroundColor: "#f6f8fa"
+
+            Image {
+                id: logo
+                source: "../assets/felgo-logo.png"
+                width: dp(100)
+                height: dp(100)
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.top: parent.top
+                anchors.topMargin: dp(60)
+            }
+
+            AppText {
+                text: qsTr("登录系统")
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.top: logo.bottom
+                anchors.topMargin: dp(30)
+                fontSize: 36
+            }
+
+            Rectangle {
+                id: loginForm
+                anchors.centerIn: parent
+                color: "white"
+                width: content.width + dp(48)
+                height: content.height + dp(16)
+                radius: dp(4)
+            }
+
+            GridLayout {
+                id: content
+                anchors.centerIn: loginForm
+                columnSpacing: dp(20)
+                rowSpacing: dp(10)
+                columns: 2
+
+                AppText {
+                    id: txtUsername
+                    text: "账号"
+                    fontSize: 26
+
+                }
+
+                AppTextField {
+                    id: username
+                    Layout.preferredWidth: dp(300)
+                    showClearButton: true
+                    font.pixelSize: sp(18)
+                    borderWidth: dp(2)
+                    anchors.top: txtUsername.bottom
+                    anchors.topMargin: dp(10)
+                }
+
+                AppText {
+                    id: txtPassword
+                    text: qsTr("密码")
+                    fontSize: 26
+
+                    anchors.top: username.bottom
+                    anchors.topMargin: dp(15)
+                }
+
+
+                AppTextField {
+                    id: password
+                    Layout.preferredWidth: dp(300)
+                    showClearButton: true
+                    font.pixelSize: sp(18)
+                    borderWidth: dp(2)
+                    anchors.top: txtPassword.bottom
+                    anchors.topMargin: dp(10)
+                }
+            }
+
+
+        }
+
+    }
+}

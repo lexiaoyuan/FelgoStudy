@@ -1,0 +1,25 @@
+import Felgo 3.0
+import QtQuick 2.0
+
+App {
+
+    NavigationStack {
+
+        Page {
+            id: loginPage
+            title: qsTr("登录")
+
+            backgroundColor: "#f6f8fa"
+
+            Image {
+                id: logo
+                source: "../assets/felgo-logo.png"
+                width: dp(30)
+                height: dp(30)
+                anchors.horizontalCenter: parent
+                anchors.topMargin: dp(60)
+            }
+        }
+
+    }
+}
